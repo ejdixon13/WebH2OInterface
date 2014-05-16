@@ -336,7 +336,7 @@
               Customer ID: ${customer.customerID}
             </div>
             <div class="panel-body">
-              ${customer.address}
+              Address: ${customer.address}
             </div>
             <div class="panel-body">
               Water Used : ${customer.waterUsed} liters
