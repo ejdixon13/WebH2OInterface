@@ -66,6 +66,8 @@
         <form action="/UserInterface/InterfaceServlet" method="post">
               <div class='col-xs-10'>
               <input class='form-control input-lg' type="text" name="custId" placeholder="Enter Customer ID#"/>
+              <input class='form-control input-lg' type="text" name="latitude" placeholder="Enter Latitude"/>
+              <input class='form-control input-lg' type="text" name="longitude" placeholder="Enter Longitude"/>
             </div>
               <button class='btn btn-primary btn-lg'>Search</button>
 <!--               <button class='btn-lg btn-link' onClick='/APIInterface/getTopMovies'>Top Charts</button> -->

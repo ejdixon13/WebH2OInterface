@@ -35,6 +35,11 @@ public class InterfaceServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String custId = request.getParameter("custId");
+		String latitude = request.getParameter("latitude");
+		String longitude = request.getParameter("longitude");
+		request.getSession().setAttribute("latitude", latitude);
+		request.getSession().setAttribute("longitude", longitude);
+		
 		Customer cust = DatabaseHelper.getCustomer(Integer.parseInt(custId));
 		if (cust != null){
 			request.getSession().setAttribute("customer", cust);

@@ -20,9 +20,38 @@
 
     <!-- Custom styles for this template -->
     <link href="css/theme.css" rel="stylesheet">
+    
+	<!--     Google Maps Stuff -->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 0% }
+      body { height: 50%; margin: 0; padding: 0 }
+      #map-canvas { height: 400px; display: block }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBkSIRU3voFQasZIcfxYNKPQ2IyOXjfic&sensor=FALSE">
+    </script>
+    <script type="text/javascript">
+//     	previous coordinates : -34.397, 150.644
+	function loadMap() {
+	  var latitude = -34.397;
+	  var longitude = 150.644;
+      function initialize() {
+
+        var mapOptions = {
+          center: new google.maps.LatLng(latitude, longitude),
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+	}
+    </script>
+
   </head>
 
-  <body role="document">
+  <body role="document" onload="loadMap()">
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -342,6 +371,7 @@
               Water Used : ${customer.waterUsed} liters
             </div>
           </div>
+          
 
 <!--         <div class="col-sm-4"> -->
 <!--           <div class="panel panel-success"> -->
@@ -382,6 +412,8 @@
       </div>
 
 
+<!-- GOOGLE MAPS API EXAMPLE -->
+<div id="map-canvas" class="span12" />
 
 <!-- WELLS... a grayish box that holds text? -->
 
